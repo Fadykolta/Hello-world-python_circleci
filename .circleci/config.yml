@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Install pthon dependencies
           command:
-            echo 'export PATH=~SPATH:~/.local/bin' >> $Bash_ENV && source $BASH_ENV
+            echo 'export PATH=~$PATH:~/.local/bin' >> $Bash_ENV && source $BASH_ENV
             pip install --user -r requirments.txt
       - run:
           name: Run Unit Tests
@@ -19,7 +19,7 @@ jobs:
       - store_artifacts:
           path: test-reports
  
- workflows:
+workflows:
    build_test:
       jobs:
         - run_test
